@@ -25,7 +25,7 @@ The `_safeTransfer` function is designed to safely transfer ERC-20 tokens from t
 
 **Detailed Usage:**
 
-- **call:**The call method is a low-level function used to interact with other contracts. It is preferred here because it allows the contract to handle token transfers in a more flexible way compared to high-level functions like transfer or send. This flexibility is crucial when dealing with a variety of ERC-20 token implementations that might behave differently.
+- **call:** The call method is a low-level function used to interact with other contracts. It is preferred here because it allows the contract to handle token transfers in a more flexible way compared to high-level functions like transfer or send. This flexibility is crucial when dealing with a variety of ERC-20 token implementations that might behave differently.
 - **abi.encodeWithSelector:** This function encodes the function selector (i.e., the first four bytes of the keccak256 hash of the function signature) along with the function arguments (to and value). This encoding prepares the data payload for the call method. Essentially, it creates the exact bytecode needed to invoke the transfer function on the ERC-20 token contract.
 - **abi.decode:** After making the call, the function decodes the returned data to ensure the operation was successful. It handles the cases where the token contract might return a boolean value indicating success. The use of abi.decode ensures that the function can interpret the response correctly and handle different token implementations.
 
